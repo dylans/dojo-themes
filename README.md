@@ -1,10 +1,17 @@
+This is the start of a project to create extra themes for use with Dojo and its various components.
+
+At the moment, there's only a set of preliminary experiments with Stylus.
+
+# Themes
+
+## Pure
 This is a simple adaptation of the [default PureCSS theme](http://yui.github.io/skinbuilder/?mode=pure) to work with [dgrid](http://dgrid.io/) and [dojox/charting](http://dojotoolkit.org/documentation/tutorials/1.9/charting/). The purpose is to show a quick demo for creating a custom there for dgrid and a chart.
 
 License and terms of usage of this code are the same as the Dojo Foundation (BSD).
 
 PureCSS is provided by Yahoo! under the BSD license
 
-# Installation
+## Installation
 
 You'll either need to setup the following dependencies:
 
@@ -18,4 +25,4 @@ You'll either need to setup the following dependencies:
 
 Or you could try out the [generator-dojo](https://github.com/bryanforbes/generator-dojo/) Grunt task
 
-Then, put the pure directory parallel to /dojo in your tree, and simply try out the example.html.
+Then, put the /pure directory parallel to /dojo in your tree, and simply try out the example.html.
