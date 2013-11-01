@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example: Pure theme with dgrid and dojox/charting</title>
+	<style>
+		@import "dgrid/css/dgrid.css";
+		@import "pure/dgrid/pure.css";
+
+		#chart,
+		#grid {
+			width: 500px;
+			height: 500px;
+			margin: 2em;
+			float: left;
+		}
+	</style>
+</head>
+
+<body class="pure">
+	<h2>Commits</h2>
+	<div id="chart"></div>
+	<div id="grid"></div>
+	<script src="dojo/dojo.js" data-dojo-config="async: true, isDebug: true"></script>
+	<script>
+		require([
+			"dojo/request",
+			"dojo/store/Memory",
+			"dojox/charting/Chart",
+			"dojox/charting/StoreSeries",
+			"dojox/charting/plot2d/Pie",
+			"pure/charting/Pure",
+			"dgrid/OnDemandGrid",
+			"dojox/charting/axis2d/Default",
+			"dojo/domReady!"
+		], function(request, Memory, Chart, StoreSeries, Pie, Pure, OnDemandGrid){
+			function createStore(data){
+				return new Memory({data: data});
+			}
+			function createChart(commits){
+				var chart = new Chart("chart");
+				chart.addPlot("default", {type: Pie});
+				chart.setTheme(Pure);
+				chart.addSeries("Commits", new StoreSeries(commits, {query: {}}, "commits"));
+				chart.render();
+			}
+			function createGrid(monthlyCount){
+				var grid = new OnDemandGrid({
+					store: monthlyCount,
+					columns: {
+						month: "Month",
+						commits: "Commits"
+					}
+				}, "grid");
+			}
+			function errorHandler(error){
+				console.log(error);
+			}
+			request("example-data.json", {handleAs: "json"})
+				.then(createStore,errorHandler)
+				.then(function(store) {
+					createChart(store);
+					createGrid(store);
+				}, errorHandler);
+		});
+	</script>
+</body>
+</html>

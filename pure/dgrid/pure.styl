@@ -1,0 +1,82 @@
+@import "nib/vendor";
+
+/* Theme specific rules */
+/* This theme is an adaptation of the default Yahoo PureCSS open source theme */
+
+/* General rules */
+$border-color = #e6eaf4
+$primary-background-color ?= #f1f3f9
+$primary-color ?= #344579
+$row-color ?= $primary-color
+$row-hover-background-color ?= darken($primary-background-color, 15%)
+
+/* ui-widget-content rules */
+$content-background-color ?= $primary-background-color
+$content-color ?= $primary-color
+
+/* Highlighting rules */
+$highlight-background-color ?= darken($primary-background-color, 15%)
+
+/* Header/Footer rules */
+$footer-background-color = #d1d7eb
+$footer-color = #1c2440
+
+/* Sorting rules */
+
+/* Selection rules */
+$selected-background-color ?= darken($primary-background-color, 30%)
+
+/* Odd-even rules */
+$row-odd-background ?= #e6eaf4
+
+/* ui-state rules */
+
+/* ColumnReorder rules */
+$reorder-dnd-border = 2px dotted $primary-color !important
+
+.pure {
+	.dgrid {
+		border-color: $border-color;
+	}
+
+	.dgrid-scroller {
+		background: $content-background-color;
+		color: $content-color;
+	}
+
+	.ui-widget-header,
+	.dgrid-footer {
+		color: $footer-color;
+		background: $footer-background-color;
+	}
+
+	.ui-widget-header th {
+		font-weight: bold;
+		color: $footer-color;
+	}
+
+	.dgrid-row-odd {
+		background: $row-odd-background;
+	}
+
+	.dgrid-row:hover {
+		background: $row-hover-background-color;
+		color: $row-color;
+	}
+
+	.dgrid-selected,
+	.dgrid-selected:hover {
+		background: $selected-background-color;
+	}
+
+	.ui-state-highlight {
+		background-color: $highlight-background-color;
+	}
+
+}
+
+/* for pagination in IE < 8 + quirks, need additional rule to override link color */
+.has-ie-6-7 .pure .dgrid-navigation a,
+.has-ie.has-quirks .pure .dgrid-navigation a {
+	color: $primary-color;
+}

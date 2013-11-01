@@ -1,0 +1,14 @@
+[
+	{"id": "0", "month": "January", "commits": 121},
+	{"id": "1", "month": "February", "commits": 48},
+	{"id": "2", "month": "March", "commits": 31},
+	{"id": "3", "month": "April", "commits": 17},
+	{"id": "4", "month": "May", "commits": 49},
+	{"id": "5", "month": "June", "commits": 22},
+	{"id": "6", "month": "July", "commits": 20},
+	{"id": "7", "month": "August", "commits": 75},
+	{"id": "8", "month": "September", "commits": 55},
+	{"id": "9", "month": "October", "commits": 45},
+	{"id": "10", "month": "November", "commits": 25},
+	{"id": "11", "month": "December", "commits": 2}
+]

@@ -1,0 +1,35 @@
+.pure .dgrid {
+  border-color: #e6eaf4;
+}
+.pure .dgrid-scroller {
+  background: #f1f3f9;
+  color: #344579;
+}
+.pure .ui-widget-header,
+.pure .dgrid-footer {
+  color: #1c2440;
+  background: #d1d7eb;
+}
+.pure .ui-widget-header th {
+  font-weight: bold;
+  color: #1c2440;
+}
+.pure .dgrid-row-odd {
+  background: #e6eaf4;
+}
+.pure .dgrid-row:hover {
+  background: #bec7e3;
+  color: #344579;
+}
+.pure .dgrid-selected,
+.pure .dgrid-selected:hover {
+  background: #8a9bcd;
+}
+.pure .ui-state-highlight {
+  background-color: #bec7e3;
+}
+/* for pagination in IE < 8 + quirks, need additional rule to override link color */
+.has-ie-6-7 .pure .dgrid-navigation a,
+.has-ie.has-quirks .pure .dgrid-navigation a {
+  color: #344579;
+}
